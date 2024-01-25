@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "node ./updateBuildJSON.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,5 +46,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
-  }
+  },
+  "buildDateTime": ""
 }
