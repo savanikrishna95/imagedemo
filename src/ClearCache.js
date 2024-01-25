@@ -14,7 +14,7 @@ function withClearCache(Component) {
     const [isLatestBuildDate, setIsLatestBuildDate] = useState(false);
 
     useEffect(() => {
-      fetch("/meta.json")
+      fetch("../public/meta.json")
         .then((response) => response.json())
         .then((meta) => {
           const latestVersionDate = meta.buildDateTime;
