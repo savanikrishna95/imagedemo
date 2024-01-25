@@ -11,9 +11,19 @@ import Copyright from "./components/Copyright";
 import { getRandomWord } from "./components/Random";
 import ImagePopup from "./components/ImagePopup";
 import { Outlet } from "react-router-dom";
+import withClearCache from "./ClearCache";
+
+
+
+const ClearCacheComponent = withClearCache(MainApp);
+
+
+function MainApp(props) { 
+  return <ClearCacheComponent />;
+}
 
 function App() {
-  const [images, setImages] = useState([]);
+   const [images, setImages] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searched, setSearched] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -180,5 +190,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
